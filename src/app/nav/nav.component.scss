@@ -1,0 +1,54 @@
+nav {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    background-color: #eaeff2;
+    padding-top: 10px;
+}
+
+.cicd_logo_size{
+  height: 3.5em;
+}
+
+.elhoo_nav_logoPosition {
+    margin-top: 10px;
+}
+
+.elhoo_nav_iconSvgPosition {
+    margin-right: -12px;
+}
+
+.elhoo_nav_logoPosition_secondletterImg {
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.elhoo_nav_notification {
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 3px;
+    cursor: pointer;
+    .badge {
+        position: absolute;
+        top: 12px;
+        right: 1px;
+        padding: 2px 5px;
+        border-radius: 50%;
+    }
+}
+
+.elhoo_nav_icon {
+    border-radius: 37px;
+    width: 50px;
+    height: 50px;
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+    margin-right: -5px;
+}
+
+.elhoo_nav_iconImgSize {
+    height: 15.52px;
+    margin-top: 18px;
+    margin-right: -4px;
+}

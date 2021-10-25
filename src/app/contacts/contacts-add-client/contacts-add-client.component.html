@@ -1,0 +1,406 @@
+<app-nav></app-nav>
+
+<app-dashbord-menu></app-dashbord-menu>
+
+<div class="container-fluid elhoo_body_text_Contacts_divContent">
+
+  <div class="row row-cols-5 mb-5">
+    <div class="col">
+      <app-contacts-title title="{{title}}" subtitle="Vous avez déjà 120 clients"></app-contacts-title>
+    </div>
+
+    <div class="offset-7 col">
+      <app-contacts-toolbar [isClients]="true"></app-contacts-toolbar>
+    </div>
+  </div>
+
+<!-------------------------------Début du formulaire-------------------------------->
+
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmitForm()">
+
+    <!-------------------------------Début Première ligne---------------------------------------->
+
+    <div class="row row-cols-3">
+
+      <!-------------------------------Section Client-------------------------------->
+
+      <div class="col" arial-label="elhoo contacts ajouter client section Client">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>CLIENT</h1> </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_reference">Référence</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_reference_idField">Référence</mat-label>
+                  <input [formControl]="referenceFormControl" autocomplete="off" matInput placeholder="Référence" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.REFERENCE">
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_nom">Nom *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_">Nom *</mat-label>
+                  <input autocomplete="off" matInput placeholder="Nom *" [formControl]="nomFormControl" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.NOM">
+
+                  <mat-error *ngIf="nomFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                      Nom is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_nomLigne2">Nom ligne 2</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_nomLigne2">Nom ligne 2</mat-label>
+                  <input [formControl]="nomLigne2FormControl" autocomplete="off" matInput placeholder="Nom ligne 2" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.NOMLigne2">
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_email">Email *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_email">Email *</mat-label>
+                  <input autocomplete="off" matInput placeholder="Email *" [formControl]="emailFormControl" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.email">
+
+                  <mat-error *ngIf="emailFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                      Email is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+      </div>
+
+    <!-------------------------------Section Adresse-------------------------------->
+
+      <div class="col" arial-label="elhoo contacts ajouter client section Adresse">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>ADRESSE</h1> </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_adresse">Adresse *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_adresse">Adresse *</mat-label>
+                  <input autocomplete="off" matInput placeholder="Adresse *" [formControl]="adresseFormControl" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.adresse">
+
+                  <mat-error *ngIf="adresseFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                      Adresse is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_adresseLigne2">Adresse ligne 2</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_adresseLigne2">Adresse ligne 2</mat-label>
+                  <input [formControl]="adresseLigne2FormControl" autocomplete="off" matInput placeholder="Nom ligne 2" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.adresseLigne2">
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row d-flex justify-content-between ml-2 mr-2">
+          <div class="col input-group  input-group1 pl-0 pr-1 w-auto">
+            <form class="w-100">
+                <label class="mb-2" for="elhoo_contacts_idField_codePostal">Code Postal *</label>
+                <mat-form-field appearance="none" class="w-100">
+                    <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_codePostal">Code Postal *</mat-label>
+                    <input autocomplete="off" matInput placeholder="Code Postal *" [formControl]="codePostalFormControl" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.CP">
+
+                    <mat-error *ngIf="codePostalFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                        Code Postal is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+          </div>
+
+          <div class="col input-group input-group1 pl-1 pr-0 w-auto">
+              <form class="w-100">
+                  <label class="mb-2" for="elhoo_contacts_idField_ville">Ville *</label>
+                  <mat-form-field appearance="none" class="w-100">
+                      <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_ville">Ville *</mat-label>
+                      <mat-select style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="ville" [formControl]="villeFormControl" [errorStateMatcher]="matcher" [(value)]="clientModif.VILLE">
+
+                          <mat-option *ngFor="let ville of villes" [value]="ville.value">
+                              {{ville.viewValue}}
+                          </mat-option>
+
+                      </mat-select>
+                      <mat-error *ngIf="villeFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                          Ville is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </form>
+          </div>
+
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_pays">Pays *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_pays">Pays *</mat-label>
+                  <input autocomplete="off" matInput placeholder="Pays *" [formControl]="paysFormControl" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.pays">
+
+                  <mat-error *ngIf="paysFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                      Pays is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+
+      </div>
+
+    <!-------------------------------Section Facturation-------------------------------->
+
+      <div class="col" arial-label="elhoo contacts ajouter client section Facturation">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>FACTURATION</h1> </div>
+
+        <div class="row input-group input-group1 ml-2 mr-2 w-auto">
+            <form class="w-100">
+                <label class="mb-2" for="elhoo_contacts_idField_langue">Langue *</label>
+                <mat-form-field appearance="none" class="w-100">
+                    <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_langue">Langue *</mat-label>
+                    <mat-select style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="langue" [formControl]="langueFormControl" [errorStateMatcher]="matcher" [(value)]="clientModif.langue">
+
+                        <mat-option *ngFor="let langue of langues" [value]="langue.value">
+                            {{langue.viewValue}}
+                        </mat-option>
+
+                    </mat-select>
+                    <mat-error *ngIf="langueFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                        Langue is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_numeroTVA">Numéro de TVA</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_numeroTVA">Numéro de TVA</mat-label>
+                  <input [formControl]="numeroTVAFormControl" autocomplete="off" matInput placeholder="Numéro de TVA" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.TVA">
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group input-group1 ml-2 mr-2 w-auto">
+            <form class="w-100">
+                <label class="mb-2" for="elhoo_contacts_idField_tauxTVA">Taux de TVA par défaut</label>
+                <mat-form-field appearance="none" class="w-100">
+                    <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_tauxTVA">Taux de TVA par défaut</mat-label>
+                    <mat-select [formControl]="TVADefautFormControl" style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="tva" [(value)]="clientModif.tauxTvaDefaut">
+                        <mat-option *ngFor="let tva of TVAs_Par_Defaut" [value]="tva.value">
+                            {{tva.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+
+        <label class="mb-2" for="elhoo_contacts_idField_delaiPaiiement">Délai de paiement</label>
+        <div class="row row-cols-4 ml-2 mr-2" id="elhoo_contacts_idField_delaiPaiiement">
+          <div class="col-3 input-group input-group1 pl-0 pr-1 w-auto">
+            <mat-form-field class="w-100" appearance="none">
+              <input [formControl]="paiementJoursFormControl" matInput  class="pl-3 w-100" type="number" value="10" placeholder="" [(ngModel)]="clientModif.delaiPaiementJour">
+            </mat-form-field>
+          </div>
+
+          <div class="col-9 input-group input-group1 pr-0 d-flex justify-content-end">
+              <form class="example-form w-100">
+                  <mat-form-field appearance="none" class="example-full-width w-100">
+                      <mat-label class="elhoo_compte_labelInputPosition">jours fin de mois</mat-label>
+                      <mat-select [formControl]="paiementTypeFormControl" style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="Categorie_delai" [(ngModel)]="clientModif.delaiPaiementType">
+                          <mat-option *ngFor="let categorie of categories" [value]="categorie.value">
+                              {{categorie.viewValue}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </form>
+          </div>
+        </div>
+        <div class="row ml-2 mr-2">
+          <mat-checkbox [formControl]="cycleRappelFormControl" color="primary" [(ngModel)]="clientModif.cycleRappel">Exclure du cycle de rappel automatique</mat-checkbox>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------------------Fin Première ligne---------------------------------------->
+
+    <!-------------------------------Début D"uxième ligne---------------------------------------->
+
+    <div class="row row-cols-3">
+
+      <!-------------------------------Section Export en comptabilité-------------------------------->
+
+      <div class="col" arial-label="elhoo contacts ajouter client section Export en comptabilité">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>EXPORT EN COMPTABILITE</h1> </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_referenceClient">Référence client</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_referenceClient">Référence client</mat-label>
+                  <input [formControl]="referenceClientFormControl" autocomplete="off" matInput placeholder="Référence" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.referenceClient">
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_numeroClient">Numéro client</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_numeroClient">Numéro client</mat-label>
+                  <input [formControl]="numeroClientFormControl" autocomplete="off" matInput placeholder="Référence" style="font-size: 12px; padding-left: 12px;" [(ngModel)]="clientModif.numeroClient">
+              </mat-form-field>
+          </form>
+        </div>
+      </div>
+
+      <!-------------------------------Section Personne de contact-------------------------------->
+
+      <div class="col-8" arial-label="elhoo contacts ajouter client section Personne de contact">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>PERSONNE DE CONTACT</h1> </div>
+
+        <label class="mb-2" for="elhoo_personne_de_contacts_subtitle">PERSONNE DE CONTACT</label>
+        <div class="row">
+          <div class="col ml-3 mr-3">
+            <div class="row row-cols-6 elhoo_contacts_section_title pt-1 mb-2 d-flex justify-content-between">
+              <h6 class="col">Civilité</h6>
+              <h6 class="col">Nom Fonction</h6>
+              <h6 class="col">Email</h6>
+              <h6 class="col">téléphone</h6>
+              <h6 class="col">téléphone (2)</h6>
+              <h6 class="col-1"></h6>
+            </div>
+
+            <div *ngIf="personnesDeContact.length !== 0" class="">
+              <div *ngFor="let personne of personnesDeContact; index as i" id="{{i}}" class="elhoo_personneDeContact row row-cols-6 d-flex justify-content-between mb-2">
+                <div class="col input-group pl-0 pr-0">
+                  <form class="w-100" >
+                      <mat-form-field appearance="none" class="w-100">
+                          <mat-label class="elhoo_compte_labelInputPosition">Civilité</mat-label>
+                          <input autocomplete="off" matInput placeholder="Civilité" value="{{personne.civilite}}" readonly="true" style="font-size: 12px; padding-left: 12px;">
+                      </mat-form-field>
+                  </form>
+                </div>
+
+                <div class="col input-group pl-0 pr-0">
+                  <form class="w-100">
+                      <mat-form-field appearance="none" class="w-100">
+                          <mat-label class="elhoo_compte_labelInputPosition">Nom Fonction</mat-label>
+                          <input value="{{personne.nomFonction}}" readonly="true" autocomplete="off" matInput placeholder="Nom Fonction" style="font-size: 12px; padding-left: 12px;">
+                      </mat-form-field>
+                  </form>
+                </div>
+
+                <div class="col input-group pl-0 pr-0">
+                  <form class="w-100">
+                      <mat-form-field appearance="none" class="w-100">
+                          <mat-label class="elhoo_compte_labelInputPosition">Email</mat-label>
+                          <input value="{{personne.email}}" readonly="true" autocomplete="off" matInput placeholder="Email" style="font-size: 12px; padding-left: 12px;">
+                      </mat-form-field>
+                  </form>
+                </div>
+
+                <div class="col input-group pl-0 pr-0">
+                  <form class="w-100">
+                      <mat-form-field appearance="none" class="w-100">
+                          <mat-label class="elhoo_compte_labelInputPosition">Téléphone</mat-label>
+                          <input value="{{personne.telephone}}" readonly="true" autocomplete="off" matInput placeholder="Téléphone" style="font-size: 12px; padding-left: 12px;">
+                      </mat-form-field>
+                  </form>
+                </div>
+
+                <div class="col input-group pl-0 pr-0">
+                  <form class="w-100">
+                      <mat-form-field appearance="none" class="w-100">
+                          <mat-label class="elhoo_compte_labelInputPosition">Téléphone (2)</mat-label>
+                          <input value="{{personne.telephone2}}" readonly="true" autocomplete="off" matInput placeholder="Téléphone (2)" style="font-size: 12px; padding-left: 12px;">
+                      </mat-form-field>
+                  </form>
+                </div>
+
+                <div class="col-1 pl-0 pr-0">
+                  <button type="reset" class="border-0 rounded-lg h-100 elhoo_addClient_button w-100" (click)="onDeletePersonneDeContact(i)">
+                    <img class="rounded-lg h-50 w-50" src="../../../../assets/Combined shape 4973.svg"/>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <form class="row row-cols-6 d-flex justify-content-between">
+              <div class="col input-group pl-0 pr-0">
+                <form class="w-100">
+                    <mat-form-field appearance="none" class="w-100">
+                        <mat-label class="elhoo_compte_labelInputPosition">Civilité</mat-label>
+                        <input [formControl]="civiliteFormControl" autocomplete="off" matInput placeholder="Civilité" style="font-size: 12px; padding-left: 12px;">
+                    </mat-form-field>
+                </form>
+              </div>
+
+              <div class="col input-group pl-0 pr-0">
+                <form class="w-100">
+                    <mat-form-field appearance="none" class="w-100">
+                        <mat-label class="elhoo_compte_labelInputPosition">Nom Fonction</mat-label>
+                        <input [formControl]="nomFonctionFormControl" autocomplete="off" matInput placeholder="Nom Fonction" style="font-size: 12px; padding-left: 12px;">
+                    </mat-form-field>
+                </form>
+              </div>
+
+              <div class="col input-group pl-0 pr-0">
+                <form class="w-100">
+                    <mat-form-field appearance="none" class="w-100">
+                        <mat-label class="elhoo_compte_labelInputPosition">Email</mat-label>
+                        <input [formControl]="emailPersContactFormControl" autocomplete="off" matInput placeholder="Email" style="font-size: 12px; padding-left: 12px;">
+                    </mat-form-field>
+                </form>
+              </div>
+
+              <div class="col input-group pl-0 pr-0">
+                <form class="w-100">
+                    <mat-form-field appearance="none" class="w-100">
+                        <mat-label class="elhoo_compte_labelInputPosition">Téléphone</mat-label>
+                        <input [formControl]="numeroTelephoneFormControl" autocomplete="off" matInput placeholder="Téléphone" style="font-size: 12px; padding-left: 12px;">
+                    </mat-form-field>
+                </form>
+              </div>
+
+              <div class="col input-group pl-0 pr-0">
+                <form class="w-100">
+                    <mat-form-field appearance="none" class="w-100">
+                        <mat-label class="elhoo_compte_labelInputPosition">Téléphone (2)</mat-label>
+                        <input [formControl]="numeroTelephone2FormControl" autocomplete="off" matInput placeholder="Téléphone (2)" style="font-size: 12px; padding-left: 12px;">
+                    </mat-form-field>
+                </form>
+              </div>
+
+              <div class="col-1 pl-0 pr-0">
+                <button type="reset" [disabled]="personnesDeContact.length >= maxContacts" class="border-0 rounded-lg h-100 elhoo_addClient_button w-100" (click)="onAddPersonneDeContact()">
+                  <img class="rounded-lg h-50 w-50" src="../../../../assets/+.svg"/>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-------------------------------Fin Deuxième ligne---------------------------------------->
+
+    <!-------------------------------Bouton de soumission du formulaire---------------------------------------->
+
+    <div class="row d-flex justify-content-end mt-3" ariel-label="Validation de la création d'un client">
+      <button class="pl-5 pr-5 mb-5 mr-3 elhoo_addClient_submit" type="submit" mat-raised-button>{{submitText}}</button>
+    </div>
+  </form>
+</div>

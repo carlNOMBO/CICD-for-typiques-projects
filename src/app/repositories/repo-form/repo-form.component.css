@@ -1,0 +1,207 @@
+.elhoo_addClient_button{
+  background-color: #323D41;
+}
+
+::ng-deep.mat-raised-button{
+  background-color: #D22254;
+  color: white;
+}
+
+.elhoo_addClient_button:focus,.elhoo_addClient_submit:focus{
+  outline: none;
+}
+
+.elhoo_body_text_Contacts_divContent {
+  margin-left: 7%;
+  width: auto;
+  padding-top: 7em !important;
+}
+
+.elhoo_body_img_TableauBord_padding {
+  padding-left: 140px;
+}
+
+.elhoo_compte_IconSvgStyle {
+  text-align: center;
+  width: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.elhoo_body_title_textStyle {
+  width: 256px;
+  font-weight: normal;
+  letter-spacing: 1.16667px;
+  color: #D22254;
+  font-size: 23px;
+}
+
+.elhoo_body_subtitle_textStyle {
+  font-size: 14px;
+  letter-spacing: 0.166667px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.elhoo_body_subtitle_textStyle2 {
+  font-size: 14px;
+  letter-spacing: 0.166667px;
+  font-family: 'Poppins', sans-serif;
+  color: #D22254;
+}
+
+.list-group-item {
+  padding: 0;
+  background-color: #fff0;
+  border: 0;
+}
+
+ul list-group {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: .25rem
+}
+
+.elhoo_contacts_input_personneDeContact {
+  height: 15px;
+}
+
+.elhoo_compte_labelInputPosition {
+  line-height: 25px;
+  background-color: #eaeff2;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 12px;
+}
+
+::ng-deep .mat-form-field-label {
+  color: #323d41!important;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+::ng-deep .mat-form-field-infix {
+  padding: 13px 0;
+  border-top: 0;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #D22254!important;
+}
+
+::ng-deep .mat-form-field {
+  border-color: #323d41;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-size: 19px;
+}
+
+.elhoo_contacts_section_title {
+  border-radius: 8px;
+  background-color: #323d41;
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.elhoo_compte_messageErrorPosition {
+  margin-top: 18px;
+  color: #d22254;
+}
+
+::ng-deep .mat-calendar-body-selected {
+  background-color: #d22254;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.elhoo_compte-logo {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.elhoo_img {
+  width: auto;
+  height: 105px;
+}
+
+::ng-deep .mat-datepicker-content {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0em 0;
+  padding-top: 104px;
+}
+
+.elhoo_body_btn {
+  color: #323d41;
+  border-color: #323d41;
+}
+
+.elhoo_body_btn:hover {
+  clear: both;
+  color: #D22254;
+  border-color: #D22254;
+  background-color: #ebeff2;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.23s ease-in-out 0s;
+}
+
+.elhoo_body_btn1 {
+  background-color: #323d41;
+  color: #ebeff2;
+  border-color: #323d41;
+}
+
+.elhoo_body_btn1:hover {
+  clear: both;
+  color: #D22254;
+  border-color: #D22254;
+  background-color: #ebeff2;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.23s ease-in-out 0s;
+}
+
+.input-group1 {
+  margin-bottom: 30px;
+}
+
+.elhoo_compte_title1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.elhoo_compte_title2 {
+  border-radius: 8px;
+  border: 1px solid #323d41;
+  display: flex;
+  justify-content: flex-start;
+}
+
+::ng-deep .custom-frame .mat-checkbox-background,
+::ng-deep .custom-frame .mat-checkbox-frame {
+  border-radius: 70% !important;
+}

@@ -1,0 +1,212 @@
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-flex {
+    align-items: center;
+}
+
+.mat-form-field.mat-form-field {
+    width: 50%;
+    align-items: center;
+    padding: 0em 0px;
+}
+
+::ng-deep .mat-calendar-body-selected {
+    background-color: #d22254;
+}
+
+::ng-deep .mat-datepicker-content {
+    margin-top: 6px;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0em 0;
+    padding-top: 4px;
+}
+
+::ng-deep .mat-datepicker-toggle {
+    bottom: 0px;
+    top: 0;
+    margin: auto;
+    font-size: x-large;
+}
+
+.elhoo_dashboard_IconDatePicker {
+    display: block;
+}
+
+.elhoo_body_title_textStyle {
+    width: 256px;
+    height: 41px;
+    font-weight: normal;
+    line-height: 41px;
+    letter-spacing: 1.16667px;
+    color: #D22254;
+    font-size: 23px;
+}
+
+.elhoo_body_subtitle_textStyle {
+    font-size: 13.6667px;
+    letter-spacing: 0.166667px;
+    margin-top: -17px;
+}
+
+.elhoo_body_img_TableauBord {
+    height: 32px;
+}
+
+.elhoo_body_text_TableauBord {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.elhoo_body_btn {
+    background: #D22254;
+    color: white;
+    border-color: #D22254;
+    &:hover {
+        clear: both;
+        color: #D22254;
+        border-color: #D22254;
+        background-color: #ebeff2;
+        cursor: pointer;
+        display: inline-block;
+        transition: all 0.23s ease-in-out 0s;
+    }
+}
+
+.elhoo_body_text_TableauBord_divContent {
+    text-align: center;
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        p {
+            margin: 0;
+            letter-spacing: 0px;
+            font-size: 12px;
+        }
+        img {
+            width: auto;
+            height: 22px;
+        }
+    }
+}
+
+.elhoo_body_text {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+    letter-spacing: 2PX;
+    width: 300px;
+}
+
+.elhoo_body_dateInputFormat {
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+    border: none;
+    margin-bottom: 36px;
+    padding: 2px 6px 12px 20px;
+    border-radius: 7px;
+    height: 42px;
+    padding-bottom: 9px;
+}
+
+.elhoo_body_img_TableauBord_padding {
+    padding-left: 140px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.elhoo_body_canvas {
+    width: 848px;
+    height: 378px;
+    padding-bottom: 33px;
+    padding-left: 0px;
+}
+
+.dateInputFormat {
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+}
+
+.elhoo_body_TableauBord-result_filter {
+    text-align: center;
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin: 0;
+        letter-spacing: 0px;
+        font-size: 16px;
+        padding-top: 30px;
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 32px;
+        padding-top: 20px;
+    }
+    img {
+        width: auto;
+        height: 35px;
+    }
+}
+
+.elhoo_body_TableauBord-result {
+    text-align: center;
+    background: #ebeff2;
+    box-shadow: 5.9px 6.8px 15.5px rgba(137, 148, 169, 0.28), -2.8px -2.8px 8px rgb(255 255 255 / 100%), inset 3.5px 3.5px 6px rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    p {
+        margin: 0;
+        letter-spacing: 0px;
+        font-size: 16px;
+        padding-top: 30px;
+        font-size: 18px;
+    }
+    h5 {
+        padding-top: 20px;
+    }
+    h1 {
+        font-size: 32px;
+        padding-top: 20px;
+    }
+    img {
+        width: auto;
+        height: 35px;
+    }
+    a {
+        width: 70%;
+    }
+}
+
+.elhoo_body_text {
+    color: #ebeff2;
+    text-decoration: none;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 20px;
+    LETTER-SPACING: 2PX;
+    width: 271px;
+}
+
+.elhoo_body_dateInputFormat_Position {
+    margin-right: -23px;
+}

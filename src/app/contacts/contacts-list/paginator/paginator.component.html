@@ -1,0 +1,19 @@
+<nav class="container-fluid mt-5" aria-label="Page navigation example">
+  <div class="row d-flex justify-content-end pagination pagination-lg">
+    <li class="col-1 page-item">
+      <a class="btn btn-outline-dark pl-4 pr-4" aria-label="Previous" (click)="onBackwardClicked()">
+        <span aria-hidden="true"><img src="../../../../assets/Combined shape 4804.svg"/></span>
+      </a>
+    </li>
+
+    <li class="col-1 page-item" *ngFor="let pageNum of pagesNumbers">
+      <a class="btn btn-outline-dark pl-4 pr-4" (click)="onNumberClicked(pageNum)">{{pageNum}}</a>
+    </li>
+
+    <li class="col-1 page-item">
+      <a class="btn btn-outline-dark pl-4 pr-4" aria-label="Next" (click)="onForwardClicked()">
+        <span aria-hidden="true"><img src="../../../../assets/Combined shape 4802.svg"/></span>
+      </a>
+    </li>
+  </div>
+</nav>

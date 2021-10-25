@@ -1,0 +1,43 @@
+<div class="row row-cols-7 border border-dark rounded-lg mt-3 mb-3 pt-3 pb-3">
+  <div class="col">
+      <mat-checkbox [(ngModel)] = "selectState" (change)="onCheckboxChange($event)" color="primary"></mat-checkbox>
+  </div>
+
+  <div class="col">
+    {{REFERENCE}}
+  </div>
+
+  <div *ngIf="!isClients" class="col">
+    {{CAT}}
+  </div>
+
+  <div class="col">
+    {{NOM}}
+  </div>
+
+  <div class="col">
+    {{CP}}
+  </div>
+
+  <div class="col">
+    {{VILLE}}
+  </div>
+
+  <div class="col">
+    {{TVA}}
+  </div>
+
+  <div class="col">
+
+    <div class="row row-cols-2">
+      <div class="col">
+        <button (click)="onDelete()" class="border-0 bg-transparent"><img src="../../../../assets/Combined shape 4644.svg"/></button>
+      </div>
+
+      <div class="col">
+        <button (click)="onModify()" class="border-0 bg-transparent"><img src="../../../../assets/Combined shape 4643.svg"/></button>
+      </div>
+    </div>
+
+  </div>
+</div>

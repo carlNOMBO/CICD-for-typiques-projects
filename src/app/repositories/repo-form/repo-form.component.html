@@ -1,0 +1,104 @@
+<app-nav></app-nav>
+
+<app-dashbord-menu></app-dashbord-menu>
+
+<div class="container-fluid elhoo_body_text_Contacts_divContent">
+
+  <div class="row row-cols-5 mb-5">
+    <div class="col">
+      <app-contacts-title title="{{title}}" subtitle="{{subtitle}}"></app-contacts-title>
+    </div>
+
+    <div class="offset-7 col">
+      <app-contacts-toolbar [isClients]="true"></app-contacts-toolbar>
+    </div>
+  </div>
+
+<!-------------------------------Début du formulaire-------------------------------->
+
+  <form [formGroup]="repoForm" (ngSubmit)="onSubmitForm()">
+
+    <!-------------------------------Début Première ligne---------------------------------------->
+
+    <div class="row row-cols-3">
+
+      <!-------------------------------Section Fom-------------------------------->
+
+      <div class="col" arial-label="elhoo contacts ajouter client section Client">
+        <div class="row elhoo_contacts_section_title p-2 ml-2 mr-2 input-group1"> <h1>Formulaire ajout d'un dépôt</h1> </div>
+
+        <div class="row input-group  input-group1 ml-2 mr-2 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_reference">Nom dépôt *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_reference_idField">Nom dépôt *</mat-label>
+                  <input [formControl]="nameFormControl" autocomplete="off" matInput placeholder="Nom dépôt *" [errorStateMatcher]="matcher" style="font-size: 12px; padding-left: 12px;">
+
+                  <mat-error *ngIf="nameFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                    Nom dépôt is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="col input-group input-group1 pl-1 pr-0 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_ville">Type de dépôt *</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_ville">Type de dépôt *</mat-label>
+                  <mat-select style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="type" [formControl]="typeFormControl" [errorStateMatcher]="matcher">
+
+                      <mat-option *ngFor="let type of types" [value]="type.value">
+                          {{type.viewValue}}
+                      </mat-option>
+
+                  </mat-select>
+                  <mat-error *ngIf="typeFormControl.hasError('required')" class="elhoo_compte_messageErrorPosition">
+                    Type de dépôt is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="col input-group input-group1 pl-1 pr-0 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_ville">Projet</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_ville">Projet</mat-label>
+                  <mat-select style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="project" [formControl]="typeFormControl" [errorStateMatcher]="matcher">
+
+                      <mat-option *ngFor="let project of projects" [value]="project.value">
+                          {{project.viewValue}}
+                      </mat-option>
+
+                  </mat-select>
+              </mat-form-field>
+          </form>
+        </div>
+
+        <div class="col input-group input-group1 pl-1 pr-0 w-auto">
+          <form class="w-100">
+              <label class="mb-2" for="elhoo_contacts_idField_ville">Pipeline</label>
+              <mat-form-field appearance="none" class="w-100">
+                  <mat-label class="elhoo_compte_labelInputPosition" id="elhoo_contacts_idField_ville">Pipeline</mat-label>
+                  <mat-select style="font-size: 12px; padding-left: 12px;  max-width:96%;" name="pipe" [formControl]="pipelineNameFormControl" [errorStateMatcher]="matcher">
+
+                      <mat-option *ngFor="let pipe of pipelines" [value]="pipe.value">
+                          {{pipe.viewValue}}
+                      </mat-option>
+
+                  </mat-select>
+              </mat-form-field>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-end mt-3" ariel-label="Validation de la création d'un client">
+      <button class="pl-5 pr-5 mb-5 mr-3 elhoo_addClient_submit" type="submit" mat-raised-button>{{submitText}}</button>
+    </div>
+
+  </form>
+</div>

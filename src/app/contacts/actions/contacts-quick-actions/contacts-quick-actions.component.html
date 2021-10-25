@@ -1,0 +1,13 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+      ACTION RAPIDE
+    </button>
+
+    <div class="elhoo_contacts_quick_action_dropdown_menu dropdown-menu" aria-labelledby="dropdownMenuReference">
+      <a class="btn dropdown-item" (click)="onSelectAllDisplayed()">
+        <span *ngIf="!allContactsChecked; else allChecked">Selectionner tous ceux qui sont affichés</span>
+        <ng-template #allChecked>Tout déselectionner</ng-template>
+      </a>
+      <a class="btn dropdown-item" (click)="onDeleteChecked()">Supprimer contacts sélectionnés</a>
+    </div>
+</div>

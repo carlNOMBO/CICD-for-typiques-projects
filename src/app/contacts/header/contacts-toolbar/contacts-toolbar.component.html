@@ -1,0 +1,44 @@
+<div class="row row-cols-4">
+  <div class="col">
+    <button *ngIf="isClients; else fournisseurs" class="border-0 bg-transparent rounded-lg" routerLink="/contacts/ajout/client">
+      <img class="rounded-lg" src="../../../../assets/Group 141.svg"/>
+    </button>
+    <ng-template #fournisseurs>
+      <button class="border-0 bg-transparent rounded-lg" routerLink="/contacts/ajout/fournisseur">
+        <img class="rounded-lg" src="../../../../assets/Group 189.svg"/>
+      </button>
+    </ng-template>
+  </div>
+
+  <div class="col">
+    <input id="elhoo_import_input" multiple="false" type="file" name="" style="display: none;"
+            (change)="onFileChange($event)" accept=".xls,.xlsx,.csv"/>
+    <button type="file" multiple="false" class="border-0 bg-transparent rounded-lg" (click)="onUpload()">
+      <img class="rounded-lg" src="../../../../assets/Group 142.svg"/>
+    </button>
+  </div>
+
+  <div class="col">
+    <button class="border-0 bg-transparent rounded-lg" (click)="onExportContactsAsXLSX()">
+      <img class="rounded-lg" src="../../../../assets/Group 143.svg"/>
+    </button>
+  </div>
+
+  <div class="col">
+    <button class="border-0 bg-transparent rounded-lg" [matMenuTriggerFor]="beforeMenu">
+      <img class="rounded-lg" src="../../../../assets/Group 144.svg"/>
+    </button>
+
+    <mat-menu class="elhoo_contacts_toolbar_menu rounded-lg" #beforeMenu="matMenu" xPosition="before">
+      <button class="elhoo_contacts_toolbar_menu_option" mat-menu-item [routerLink]="['/contacts','clients']">
+        Clients
+      </button>
+
+      <mat-divider class="mr-3 ml-3 elhoo_contacts_toolbar_menu_divider" [inset]="false"></mat-divider>
+
+      <button class="elhoo_contacts_toolbar_menu_option" mat-menu-item [routerLink]="['/contacts','fournisseurs']">
+        Fournisseurs
+      </button>
+    </mat-menu>
+  </div>
+</div>

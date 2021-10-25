@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-1">Listing |</div>
+
+    <div class="col-11">
+      <div class="row">
+        <div class="col-1">
+          <app-contacts-items-number (maxNumberChanged)="onMaxNumberChanged($event)"></app-contacts-items-number>
+        </div>
+
+        <div class="col-3">
+          <app-contacts-quick-actions (deleteCheckedEvent)="onMultipleDelete()" (allContactsCheckedEvent)="onSelectAllDisplayed($event)"
+                                      [changeState]="allContactsCheckedDisplayed"></app-contacts-quick-actions>
+        </div>
+
+        <div class="offset-4 col-4">
+          <app-contacts-searchbar (searchValueChange)="onWritingIntoSearchbar($event)"></app-contacts-searchbar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-7 border border-dark rounded-lg mt-3 mb-3 pt-3 elhoo-list-header text-body">
+    <div class="col">
+      <h4>ACTION</h4>
+    </div>
+
+    <div class="col">
+      <h4>REFERENCE</h4>
+    </div>
+
+    <div *ngIf="!isClients" class="col">
+      <h4>CAT</h4>
+    </div>
+
+    <div class="col">
+      <h4>NOM</h4>
+    </div>
+
+    <div class="col">
+      <h4>CP</h4>
+    </div>
+
+    <div class="col">
+      <h4>VILLE</h4>
+    </div>
+
+    <div class="col">
+      <h4>TVA</h4>
+    </div>
+
+    <div class="col">
+      <h4>ACTION</h4>
+    </div>
+  </div>
+
+  <div *ngIf="isClients"> {{clients.length}} Client(s) trouvé(s)</div>
+  <div *ngIf="(isClients && numbersCount.length!==0)" #list>
+    <app-single-contact *ngFor="let i of numbersCount" [isClients]="isClients" [REFERENCE]="clients[i].REFERENCE"
+      [NOM]="clients[i]?.NOM" [CP]="clients[i]?.CP" [VILLE]="clients[i]?.VILLE" [TVA]="clients[i]?.TVA"
+      (checked)="onCheckedSingle($event)" (unChecked)="onUnCheckedSingle($event)"
+      (delete)="onSingleDelete($event)" [selectState]="allContactsCheckedDisplayed">
+    </app-single-contact>
+  </div>
+
+  <div *ngIf="!isClients"> {{fournisseurs.length}} Fournisseur(s) trouvé(s)</div>
+  <div *ngIf="(!isClients && numbersCount.length!==0)" #list>
+    <app-single-contact *ngFor="let i of numbersCount" [isClients]="isClients"
+      [REFERENCE]="fournisseurs[i].REFERENCE" [CAT]="fournisseurs[i].CAT" [NOM]="fournisseurs[i].NOM"
+      [CP]="fournisseurs[i].CP" [VILLE]="fournisseurs[i].VILLE" [TVA]="fournisseurs[i].TVA"
+      (checked)="onCheckedSingle($event)" (unChecked)="onUnCheckedSingle($event)"
+      (delete)="onSingleDelete($event)" [selectState]="allContactsCheckedDisplayed">
+    </app-single-contact>
+  </div>
+
+  <app-paginator [numberOfPages]="numberOfPages" (previousClicked)="onPreviousPageClicked($event)"
+                 (pageNumberClicked)="onPageNumberClicked($event)" (nextClicked)="onNextPageClicked($event)">
+  </app-paginator>
+</div>

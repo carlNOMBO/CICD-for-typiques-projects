@@ -1,0 +1,17 @@
+::ng-deep .mat-menu-content {
+  background-color: #ebeff2 !important;
+  width: 13em !important;
+}
+
+.elhoo_contacts_toolbar_menu_option{
+  text-align: right;
+  color: black;
+}
+
+.elhoo_contacts_toolbar_menu_divider {
+  background-color: black;
+}
+
+button:focus {
+  outline: none;
+}
